@@ -1,1 +1,246 @@
-This is Bottle Lab Berlin
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Bottle-Up</title>
+	<meta name="author" content="Pascal Crenzin" />
+	<meta name="description" content="Bottle-Up by Run the Tools" />
+	<meta name="keywords" content="upcycling, design, 3d-print lifestyle" />
+	<meta name="Resource-type" content="Document" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+
+
+	<link rel="stylesheet" type="text/css" href="style.css" />
+
+	<!--[if IE]>
+        <script type="text/javascript">
+             var console = { log: function() {} };
+        </script>
+    <![endif]-->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.js"></script>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				sectionsColor: ['#000000', '#000000', '#000000', '#000000'],
+				//anchors: ['awelcome', 'agallery', 'astory', 'acontact'],
+				menu: '#menu',
+				css3: true,
+				scrollingSpeed: 800,
+				navigation: true,
+				navigationPosition: 'right',
+				navigationTooltips: ['Welcome', 'Gallery', 'Our Story', 'Contact'],
+				verticalCentered: false,
+				scrollOverflow: true
+			});
+		});
+
+		function moveToGallery() {
+			$.fn.fullpage.moveTo(2, 0);
+		}
+
+
+		function openModal() {
+			$('#myModal').modal();
+		}
+
+		function openImpressumModal() {
+			$('#impressumModal').modal();
+		}
+	</script>
+
+	<script type="text/javascript">
+		$("#lightgallery").lightGallery();
+	</script>
+
+</head>
+
+<body>
+
+
+	<div id="fullpage">
+
+		<div class="section active background-picture">
+			<h1 style="color: #ffffff; font-family: Sloppy; padding-top: 10px">Bottle Up</h1>
+			<h2 style="color: #eeeeee">by Run the Tools</h2>
+			<h2 style="color: #101010">use old bottles and our tools to build furniture instead of producing trash</h2>
+			<button onclick="moveToGallery()" class="btn btn-primary btn-lg">EXPLORE</button>
+		</div>
+
+		<div class="section">
+			<div class="intro blur5">
+				<h1 class="headline">Gallery</h1>
+
+				<p>Follow us on <a href="https://www.instagram.com/runthetoolsberlin/">Instagram</a></p>
+
+				<div class="container">
+
+					<div class="row">
+						<div class="col">
+							<div class="figure-container">
+								<figure onclick="openModal()">
+									<img src="./gallery/flower1.jpg" style="max-width: 100%" alt="" />
+									<figcaption>Blumenvase</figcaption>
+								</figure>
+								<div class="middle">
+									<div class="text">Mehr erfahren</div>
+								</div>
+							</div>
+
+
+						</div>
+						<div class="col">
+							<figure>
+								<img src="./gallery/skatetable_scaled.JPG" style="max-width: 100%" alt="Tisch" />
+								<figcaption>Skater Bank</figcaption>
+							</figure>
+
+						</div>
+						<div class="col">
+							<figure>
+								<img src="./galle/flower1.jpg" style="max-width: 100%" alt="Nachttisch" />
+								<figcaption>comming soon</figcaption>
+							</figure>
+
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col">
+							<div class="figure-container">
+								<figure onclick="openModal()">
+									<img src="./gallery/ashtray_small.jpg" style="max-width: 100%" alt="" />
+									<figcaption>Aschenbecher</figcaption>
+								</figure>
+								<div class="middle">
+									<div class="text">Mehr erfahren</div>
+								</div>
+							</div>
+
+
+						</div>
+						<div class="col">
+							<figure>
+								<img src="./gallery/skatetable_scaled.JPG" style="max-width: 100%" alt="Tisch" />
+								<figcaption>Halter oder Aufsteller</figcaption>
+							</figure>
+
+						</div>
+						<div class="col">
+							<figure>
+								<img src="./galle/flower1.jpg" style="max-width: 100%" alt="Nachttisch" />
+								<figcaption>comming soon</figcaption>
+							</figure>
+
+						</div>
+					</div>
+
+				</div>
+
+
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="intro blur10">
+				<h1 class="headline">Our Story</h1>
+				<p>Wir sind ein Duo aus Hamburg und Berlin. Bei uns trifft Kunst und Film auf Technologie und Design; Afrikareisen auf Arbeit im Silicon Valley; HipHop auf Techno. So verschieden unsere Hintergründe auch sind, umso größer ist die Schnittmenge unserer
+					Wertvorstellungen. Wir stehen für Nachhaltigkeit, Mobilität und Kreativität. Ganz nach dem Motto es gibt keine Probleme, es gibt nur Herausforderungen, haben wir es uns zur Aufgabe macht aus nutzlosen Flaschen, praktische Möbel und Deko zu kreieren.</p>
+				<p>Mit Upcycling, Social Design und einer Community streben wir danach die Welt ein kleines bisschen besser zu machen.</p>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="intro blur20">
+				<h1 class="headline">Get In Touch</h1>
+				<p>Bei Fragen, mehr Informationen, Bestellungen, Feedback oder einfach nur so</p>
+				<a href="mailto:pascalcrenzin@gmail.com">Schick uns eine E-Mail</a> (pascalcrenzin@gmail.com)
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<div id="infoMenu">
+		<ul>
+			<li><a href="https://www.instagram.com/runthetoolsberlin/">Instagram</a></li>
+			<li><a href="#" onclick="openImpressumModal()">Impressum</a></li>
+		</ul>
+	</div>
+
+	<div id="impressumModal" class="modal fade">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Impressum</h5>
+
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pascal Crenzin 10827 Berlin pascalcrenzin@gmail.com
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="myModal" class="modal fade">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Blumenvase</h5>
+
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+				</div>
+				<div class="modal-body">
+					<p>
+						Benötigte Teile von uns
+						<ul>
+							<li>3 Flaschen mit Schraubverschluss</li>
+							<li>1 Bottle-Up Basetool</li>
+							<li>1 Vasen Addon</li>
+							<li></li>
+
+						</ul>
+						Benötigte Teile von dir
+						<ul>
+							<li>3 Flaschen mit Schraubverschluss</li>
+							<li>min. 1 Blume</li>
+						</ul>
+					</p>
+					Anleitung
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary">Will ich haben</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

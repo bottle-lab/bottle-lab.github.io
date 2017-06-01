@@ -13,10 +13,11 @@
 
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
 
 	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" href="animations.css">
 
 	<!--[if IE]>
         <script type="text/javascript">
@@ -32,26 +33,48 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-
+	<!-- <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script> -->
 
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
-				sectionsColor: ['#000000', '#000000', '#000000', '#000000'],
+				sectionsColor: ['#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000'],
 				//anchors: ['awelcome', 'agallery', 'astory', 'acontact'],
 				menu: '#menu',
 				css3: true,
 				scrollingSpeed: 800,
 				navigation: true,
+				//scrollOverflow: true,
+				//normalScrollElements: ["section2"],
 				navigationPosition: 'right',
-				navigationTooltips: ['Welcome', 'Gallery', 'Our Story', 'Contact'],
+				scrollBar: true,
+				//navigationTooltips: ['Welcome', 'Gallery', 'Our Story', 'Contact'],
 				verticalCentered: false,
-				scrollOverflow: true
+				onLeave: function(index, nextIndex, direction) {
+
+					//animation for section 2, 3 and 4
+					console.log("going from " + index + " to ", nextIndex);
+					if ([2, 3, 5].indexOf(nextIndex) > -1) {
+						$("#sec" + nextIndex + "L").addClass("slide-in-left");
+						setTimeout(function() {
+							$("#sec"  + nextIndex + "R").addClass("slide-in-right");
+						}, 1000);
+					}
+					if ([5].indexOf(nextIndex) > -1) {
+						setTimeout(function() {
+							$("#sec"  + nextIndex + "R2").addClass("slide-in-right");
+						}, 2000);
+					}
+
+				}
+
 			});
 		});
 
-		function moveToGallery() {
-			$.fn.fullpage.moveTo(2, 0);
+
+
+		function moveDown() {
+			$.fn.fullpage.moveSectionDown();
 		}
 
 
@@ -64,9 +87,7 @@
 		}
 	</script>
 
-	<script type="text/javascript">
-		$("#lightgallery").lightGallery();
-	</script>
+
 
 </head>
 
@@ -75,27 +96,130 @@
 
 	<div id="fullpage">
 
+		<!--section 1: name and topic -->
 		<div class="section active background-picture">
-			<h1 style="color: #ffffff; font-family: Sloppy; padding-top: 10px">Bottle Up</h1>
-			<h2 style="color: #eeeeee">by Run the Tools</h2>
-			<h2 style="color: #101010">use old bottles and our tools to build furniture instead of producing trash</h2>
-			<button onclick="moveToGallery()" class="btn btn-primary btn-lg">EXPLORE</button>
+			<h1 class="slider-left slide-in-left" style="color: #ffffff; font-family: Sloppy; padding-top: 10px; z-index: 10">Bottle Lab Berlin</h1>
+			<h2 style="color: #eeeeee">Upcycling & Social Design</h2>
+
+			<div class="next-button-container">
+				<button type="button" class="btn btn-secondary" onclick="moveDown()" class="">MEHR ERFAHREN</button>
+			</div>
+
+		</div>
+
+		<!--section 2: kunst oder weg? -->
+		<div class="section background-picture-trash">
+			<div class="baudisch-style text-left slider-left" id="sec2L">
+				<h3>
+				Flasche leer?
+			</h3>
+			</div>
+			<div class="baudisch-style slider-right" id="sec2R">
+				<h3>
+				Ist das <span class="baudisch-green">Kunst</span> oder kann das  <span class="baudisch-red">weg</span>?
+			</h3>
+			</div>
+
+
+			<div class="next-button-container">
+
+				<button class="btn btn-secondary" onclick="moveDown()" class="">MEHR ERFAHREN</button>
+
+			</div>
+		</div>
+
+		<!--section 3: statement -->
+		<div class="section background-picture-art">
+			<div class="baudisch-style">
+				<p style="font-style: bold;">
+					Wir glauben:
+				</p>
+			</div>
+			<div class="baudisch-style text-left slider-left" id="sec3L">
+				<h3>
+				Daraus kann man mehr machen.
+			</h3>
+			</div>
+			<div class="baudisch-style slider-right" id="sec3R">
+				<h3>
+				<span class="baudisch-green">Mehr als wegwerfen, <br> mehr als Kunst.</span>
+			</h3>
+			</div>
+
+			<div>
+				<div class="next-button-container">
+
+					<button class="btn btn-secondary" onclick="moveDown()" class="">MEHR ERFAHREN</button>
+
+				</div>
+			</div>
+
+		</div>
+
+		<!--section 4: buehne frei! -->
+		<div class="section">
+			<div class=" baudisch-style">
+				<h3>
+				Deswegen haben wir das <span class="baudisch-green">Bottle-Up-Tool</span> gebaut.
+			</h3>
+			</div>
+			<!--3 fotos -->
+			<div class="row">
+				<div class="col">
+					<img src="./bottleuptool.JPG" alt="" style="width: 30vw" />
+				</div>
+				<div class="col">
+					<img src="./bottleassemble.jpg" alt="" style="width: 30vw" />
+				</div>
+				<div class="col">
+					<img src="./bottletripod.JPG" alt="" style="width: 30vw" />
+				</div>
+			</div>
+
+
+			<div class="next-button-container">
+
+				<button class="btn btn-secondary" onclick="moveDown()" class="">MEHR ERFAHREN</button>
+
+			</div>
+
 		</div>
 
 		<div class="section">
-			<div class="intro blur5">
-				<h1 class="headline">Gallery</h1>
 
-				<p>Follow us on <a href="https://www.instagram.com/runthetoolsberlin/">Instagram</a></p>
+			<div class="baudisch-style text-left slider-left" id="sec5L">
+				<h3>
+				Noch mehr? Na gut.
+			</h3>
+			</div>
+			<div class="baudisch-style slider-right" id="sec5R">
+				<h3>
+				Unsere Designs findest du auf <a href="https://www.instagram.com/runthetoolsberlin/">Instagram</a>
+			</h3>
+			</div>
+			<div class="baudisch-style slider-right" id="sec5R2">
+				<h3>
+				Bei Fragen, mehr Informationen, Bestellungen oder Feedback schicke bitte eine E-Mail an <a href="mailto:pascalcrenzin@gmail.com">Schick uns eine E-Mail</a> (pascalcrenzin@gmail.com)
+			</h3>
+			</div>
 
+		</div>
+
+
+
+
+		<!--
+				<p>
+					Alles was du brauchst sind
+				</p>
 				<div class="container">
 
 					<div class="row">
-						<div class="col">
+						<div class="col col-sm-12	col-md-6	col-lg-4">
 							<div class="figure-container">
 								<figure onclick="openModal()">
 									<img src="./gallery/flower1.jpg" style="max-width: 100%" alt="" />
-									<figcaption>Blumenvase</figcaption>
+									<figcaption>All in One Café-Deko. Blumenvase, Aschenbecher, Menuhalter</figcaption>
 								</figure>
 								<div class="middle">
 									<div class="text">Mehr erfahren</div>
@@ -104,14 +228,14 @@
 
 
 						</div>
-						<div class="col">
+						<div class="col col-sm-12	col-md-6	col-lg-4">
 							<figure>
 								<img src="./gallery/skatetable_scaled.JPG" style="max-width: 100%" alt="Tisch" />
 								<figcaption>Skater Bank</figcaption>
 							</figure>
 
 						</div>
-						<div class="col">
+						<div class="col col-sm-12	col-md-6	col-lg-4">
 							<figure>
 								<img src="./galle/flower1.jpg" style="max-width: 100%" alt="Nachttisch" />
 								<figcaption>comming soon</figcaption>
@@ -120,8 +244,7 @@
 						</div>
 					</div>
 
-					<div class="row">
-						<div class="col">
+						<div class="col col col-sm-12	col-md-6	col-lg-4">
 							<div class="figure-container">
 								<figure onclick="openModal()">
 									<img src="./gallery/ashtray_small.jpg" style="max-width: 100%" alt="" />
@@ -134,44 +257,44 @@
 
 
 						</div>
-						<div class="col">
+						<div class="col col-sm-12	col-md-6	col-lg-4">
 							<figure>
 								<img src="./gallery/skatetable_scaled.JPG" style="max-width: 100%" alt="Tisch" />
 								<figcaption>Halter oder Aufsteller</figcaption>
 							</figure>
 
 						</div>
-						<div class="col">
+						<div class="col col-sm-12	col-md-6	col-lg-4">
 							<figure>
 								<img src="./galle/flower1.jpg" style="max-width: 100%" alt="Nachttisch" />
 								<figcaption>comming soon</figcaption>
 							</figure>
 
 						</div>
-					</div>
+
 
 				</div>
 
 
-			</div>
+	</div>
+	</div>
+ -->
+	<!-- <div class="section">
+		<div class="intro blur10">
+			<h1 class="headline">Our Story</h1>
+			<p>Wir sind ein Duo aus Hamburg und Berlin. Bei uns trifft Kunst und Film auf Technologie und Design; Afrikareisen auf Arbeit im Silicon Valley; HipHop auf Techno. So verschieden unsere Hintergründe auch sind, umso größer ist die Schnittmenge unserer
+				Wertvorstellungen. Wir stehen für Nachhaltigkeit, Mobilität und Kreativität. Ganz nach dem Motto es gibt keine Probleme, es gibt nur Herausforderungen, haben wir es uns zur Aufgabe macht aus nutzlosen Flaschen, praktische Möbel und Deko zu kreieren.</p>
+			<p>Mit Upcycling, Social Design und einer Community streben wir danach die Welt ein kleines bisschen besser zu machen.</p>
 		</div>
+	</div>
 
-		<div class="section">
-			<div class="intro blur10">
-				<h1 class="headline">Our Story</h1>
-				<p>Wir sind ein Duo aus Hamburg und Berlin. Bei uns trifft Kunst und Film auf Technologie und Design; Afrikareisen auf Arbeit im Silicon Valley; HipHop auf Techno. So verschieden unsere Hintergründe auch sind, umso größer ist die Schnittmenge unserer
-					Wertvorstellungen. Wir stehen für Nachhaltigkeit, Mobilität und Kreativität. Ganz nach dem Motto es gibt keine Probleme, es gibt nur Herausforderungen, haben wir es uns zur Aufgabe macht aus nutzlosen Flaschen, praktische Möbel und Deko zu kreieren.</p>
-				<p>Mit Upcycling, Social Design und einer Community streben wir danach die Welt ein kleines bisschen besser zu machen.</p>
-			</div>
+	<div class="section">
+		<div class="intro blur20">
+			<h1 class="headline">Get In Touch</h1>
+			<p>Bei Fragen, mehr Informationen, Bestellungen, Feedback oder einfach nur so</p>
+			<a href="mailto:pascalcrenzin@gmail.com">Schick uns eine E-Mail</a> (pascalcrenzin@gmail.com)
 		</div>
-
-		<div class="section">
-			<div class="intro blur20">
-				<h1 class="headline">Get In Touch</h1>
-				<p>Bei Fragen, mehr Informationen, Bestellungen, Feedback oder einfach nur so</p>
-				<a href="mailto:pascalcrenzin@gmail.com">Schick uns eine E-Mail</a> (pascalcrenzin@gmail.com)
-			</div>
-		</div>
+	</div> -->
 
 
 

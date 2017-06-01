@@ -13,6 +13,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
 form,fieldset,input,textarea,p,blockquote,th,td {
 	padding: 0;
 	margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 a{
 	text-decoration:none;
@@ -44,7 +45,6 @@ h1,h2,h3,h4,h5,h6 {
 	font-size: 100%;
 	margin:0;
 	padding:0;
-	color:#444;
 }
 q:before,q:after {
 	content:'';
@@ -88,12 +88,31 @@ p{
 	color: #f0ffe4;
 }
 
+.next-button-container {
+position: fixed;
+left: 50%;
+bottom: 20px;
+transform: translate(-50%, -50%);
+margin: 0 auto;
+}
 
 .background-picture {
 		background-image: url(background_landing.jpg);
 		background-size:cover;
 
 	}
+
+  .background-picture-trash {
+  		background-image: url(bottlemess.jpg);
+  		background-size:cover;
+
+  	}
+
+    .background-picture-art {
+    		background-image: url(bottleart.jpg);
+    		background-size:cover;
+
+    	}
 
 	.blur2:before {
 	  content: "";
@@ -217,54 +236,40 @@ p{
 }
 
 
+.next-button {
 
-
-
-
-.btn {
-  -moz-user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 2px;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.42857;
-  margin-bottom: 0;
-  padding: 6px 12px;
-  text-align: center;
-  vertical-align: middle;
-  white-space: nowrap;
-  text-decoration: none;
 }
 
-.btn-lg {
-  border-radius: 2px;
-  font-size: 18px;
-  line-height: 1.33333;
-  padding: 10px 16px;
+.text-left {
+  margin-top: 10%;
+  padding-right: 15%;
 }
 
-.btn-primary:hover {
-  background-color: #fff;
-  color: #152836;
+.text-right {
+  margin-top: 10px;
+  padding-left: 15%;
 }
 
-.btn-primary {
-  background-color: rgba(255, 255, 255, 0.5);
-  border-color: #0e1a24;
-  color: #444444;
-	position: absolute;
-	bottom: 10%;
-	right: 40%;
-}
+
+.baudisch-style {
+  color: #eceeef;
+  font-size: 20px;
+  margin: 10px 0 0 10px;
+  white-space: wrap;
+  overflow: hidden;
+  width: 30em;
+  background-color: rgba(66, 63, 60, 0.60);
+  width: 100%;
 }
 
-.btn-primary {
-  border-color: #eeeeee;
-  color: #eeeeee;
-  transition: color 0.1s ease 0s, background-color 0.15s ease 0s;
+.baudisch-green {
+  color: #47c147;
+  font-weight: bold;
+}
+
+.baudisch-red {
+  color: #c57422;
+  font-weight: bold;
 }
 
 
@@ -740,6 +745,9 @@ figcaption {
 	h1{
 		font-size: 4.5em;
 	}
+  h3{
+    font-size: 1em;
+  }
 	#donations a{
 		font-size: 57%;
 	}

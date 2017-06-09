@@ -465,10 +465,10 @@ figcaption {
 }
 #menu li a{
 	text-decoration:none;
-	color: #000;
+	color: #fff;
 }
 #menu li.active a:hover{
-	color: #000;
+	color: #fff;
 }
 #menu li:hover{
 	background: rgba(255,255,255, 0.8);
@@ -491,27 +491,7 @@ figcaption {
 	padding: 0;
 	margin:0;
 }
-#usedBy{
-	background-image: url('imgs/used-by-fullpage.png?v=2');
-	margin: 0 auto;
-	margin-top: 50px;
-	display: block;
-	height: 127px;
-	width: 402px;
-}
 
-#section0 img,
-#section1 img{
-	margin: 20px 0 0 0;
-}
-#section2 img{
-	margin: 20px 0 0 52px;
-}
-#section3 img{
-	bottom: 0px;
-	position:absolute;
-	margin-left: -420px;
-}
 .intro p{
 	width: 50%;
 	margin: 0 auto;
@@ -620,7 +600,7 @@ figcaption {
 #infoMenu li a{
 	display: block;
 	margin: 0 22px 0 0;
-	color: #333;
+	color: #fff;
 }
 #infoMenu li a:hover{
 	text-decoration:underline;
